@@ -1,0 +1,18 @@
+{
+  "name": "reactova-framework",
+  "description": "Reactova React Native Development Framework",
+  "version": "0.0.1",
+  "author": "Christopher Rathgeb <crathgeb@digitova.com>",
+  "repository": "git://github.com/digitova/reactova-framework",
+  "main": "src/index.js",
+  "keywords": [
+    "react",
+    "react-native",
+    "framework"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "license": "MIT"
+}
