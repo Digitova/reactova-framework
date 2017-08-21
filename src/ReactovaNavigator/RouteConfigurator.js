@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import getScreenTemplate from '../ScreenTemplateWrapper';
-import ApptovaNavigator from './index'
+import ReactovaNavigator from './index'
 
 export default function buildRouteConfig(navigationSchema) {
 	let routes = navigationSchema.routes
@@ -13,7 +13,7 @@ export default function buildRouteConfig(navigationSchema) {
 			route[key].screen =  class extends React.Component {
 				render(){
 					return (
-						<ApptovaNavigator navigationSchema={routes[key]} />
+						<ReactovaNavigator navigationSchema={routes[key]} />
 					);
 				}
 			}
