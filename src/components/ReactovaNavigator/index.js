@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import buildRouteConfig from './RouteConfigurator'
 import createNavigator from './NavigatorFactory'
-import DefaultTheme from'../../config/theme'
+import DefaultTheme from'../../../config/theme'
 
 export default class extends Component {
 	render() {

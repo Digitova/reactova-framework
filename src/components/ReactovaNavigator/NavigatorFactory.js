@@ -3,7 +3,7 @@ import { TabNavigator, DrawerNavigator,StackNavigator } from 'react-navigation'
 import deepmerge from 'deepmerge'
 
 import DrawerNavigatorContent from './DrawerNavigator/DrawerNavigatorContent'
-import DefaultTheme from '../../config/theme'
+import DefaultTheme from '../../../config/theme'
 
 
 export default function createNavigator(navigationSchema,routeConfig, theme = DefaultTheme) {

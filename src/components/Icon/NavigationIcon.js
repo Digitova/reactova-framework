@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, TouchableHighlight, StyleSheet } from 'react-native';
 import Icon from './index'
-import DefaultTheme from '../../config/theme'
+import DefaultTheme from '../../../config/theme'
 
 export default class extends Component {
 
