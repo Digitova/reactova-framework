@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import * as TestReducer from './testReducer'
+import * as ThemeReducer from './ThemeReducer'
 
 export default combineReducers(Object.assign(
-	TestReducer
+	ThemeReducer
 ))
