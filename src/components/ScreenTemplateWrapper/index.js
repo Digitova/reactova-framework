@@ -1,10 +1,9 @@
 import React from 'react'
 import { ImageBackground, Dimensions } from 'react-native'
-import deepmerge from 'deepmerge'
 
 
 export default function getScreenTemplate(routeConfig) {
-	let mergedProps = routeConfig.props//deepmerge(, app.defaultProps)
+	let sceneProps = routeConfig.props
 	const Template = routeConfig.template
 
 	return class extends React.Component {
@@ -26,7 +25,7 @@ export default function getScreenTemplate(routeConfig) {
 		}
 
 		renderTemplate() {
-			return <Template {...mergedProps } {...this.props} />
+			return <Template {...sceneProps } {...this.props} />
 		}
 	}
 }
