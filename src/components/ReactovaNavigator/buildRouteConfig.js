@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getScreenTemplate from './getRouteTemplate';
+import getRouteTemplate from './getRouteTemplate';
 import ReactovaNavigator from './index'
 
 export default function buildRouteConfig(navigationSchema) {
@@ -30,7 +30,7 @@ export default function buildRouteConfig(navigationSchema) {
 			let route = {}
 			route[key] = {}
 			route[key].path = routes[key].path
-			route[key].screen = getScreenTemplate(routes[key])
+			route[key].screen = getRouteTemplate(routes[key])
 
 			if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions =routes[key].navigationOptions;
