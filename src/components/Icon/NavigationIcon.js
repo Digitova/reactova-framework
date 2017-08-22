@@ -1,42 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, Image, TouchableHighlight, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import Icon from './index'
-import DefaultTheme from '../../../config/theme'
 
-export default class extends Component {
+class NavigationIcon extends Component {
 
 	constructor(props) {
 		super(props);
 
-
-		if(this.props.hasOwnProperty('theme')) {
-			this.theme = this.props.theme
-		} else {
-			this.theme = DefaultTheme
-		}
-
-
-
-		const styles = {
-			navWrapperBase: {
-				alignItems: 'flex-start',
-				borderLeftWidth: StyleSheet.hairlineWidth,
-				borderRightWidth: StyleSheet.hairlineWidth,
-				borderColor: this.theme.primaryColor,
-				overflow: 'visible',
-			},
-			outerNavWrapper: {
-				...this.props.style,
-			},
-			outerNavWrapperToggled: {
-				borderColor: this.theme.shadowBorderLightSide,
-			},
-			innerNavWrapper: {
-				height: 50
-			},
-			innerNavWrapperToggled: {
-				borderColor: this.theme.shadowBorderDarkSide
-			},
+		this.styles = {
 			navItem: {
 				flex: 1,
 				width: 50,
@@ -45,57 +17,34 @@ export default class extends Component {
 			},
 			navText: {
 				color: '#FFFFFF',
-				fontSize: 25,
+				fontSize: 30,
 				justifyContent: 'center'
 			}
 		}
 	}
 
-	shouldComponentUpdate(nextProps) {
-		return (this.props.toggleSelected !== nextProps.toggleSelected)
-	}
-
-
 	render() {
 		return (
-			<View style={ this._getNavStyles('outerNavWrapper')}>
-				<View style={ this._getNavStyles('innerNavWrapper')}>
-					<TouchableHighlight
-						style={ this.styles.navItem }
-						underlayColor={ this.theme.secondaryColor }
-						onPress={ this.props.onPress }>
-						<View>
-							<Icon name={this.props.name} provider={this.props.provider} style={ this.styles.navText }/>
-						</View>
-					</TouchableHighlight>
+			<TouchableHighlight
+				style={ this.styles.navItem }
+				underlayColor={ this.props.theme.navButtonUnderlayColor }
+				onPress={this.handlePress.bind(this)} >
+				<View>
+					<Icon name={this.props.name} provider={this.props.provider} style={[this.styles.navText, this.props.style , {color: this.props.theme.secondaryColor}] }/>
 				</View>
-			</View>
+			</TouchableHighlight>
 		);
 	}
 
-	_getNavStyles(styleName) {
-		return {
-			...this.styles.navWrapperBase,
-			...this.styles[styleName],
-			...this._getToggledStyles(styleName)
-		}
-	}
-
-	_getToggledStyles(styleName) {
-		if(this.props.toggleSelected) {
-			return {
-				...this.styles[styleName+'Toggled'],
-				backgroundColor: this._getToggledBgColor()
-			}
-		}
-		return {}
-	}
-
-	_getToggledBgColor() {
-		let bgColor = [
-			this.theme.primaryColor,
-			this.theme.secondaryColor,
-		]
-		return bgColor[+this.props.toggleSelected]
+	handlePress(){
+		this.props.onPress()
 	}
 }
+
+function mapStateToProps({reactova}){
+	return {
+		theme: reactova.theme,
+	}
+}
+
+export default connect(mapStateToProps, null)(NavigationIcon);

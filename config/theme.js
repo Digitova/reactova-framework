@@ -4,8 +4,8 @@ export default {
 	primaryColor: '#f5f5f5',
 	secondaryColor: '#666666',
 
-	shadowBorderLightSide: '#666666',
-	shadowBorderDarkSide: '#333333',
+	navButtonUnderlayColor: '#f0f0f0',
+
 	tabBarIconInActiveColor: '#777777',
 	tabBarIconActiveColor: '#3377dd'
 }
