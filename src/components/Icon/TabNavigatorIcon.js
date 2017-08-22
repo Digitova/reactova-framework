@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Icon from '../../Icon'
+import Icon from '../Icon'
 
 export default class extends Component {
 

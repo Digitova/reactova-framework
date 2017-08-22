@@ -1,6 +1,6 @@
 export {default as GridView} from "./components/GridView"
 export {default as Icon} from "./components/Icon"
-export {default as TabNavigatorIcon} from "./components/ReactovaNavigator/TabNavigator/TabNavigatorIcon"
+export {default as TabNavigatorIcon} from "./components/Icon/TabNavigatorIcon"
 export {default as NavigationIcon} from "./components/Icon/NavigationIcon"
 export {default as ReactovaNavigator} from "./components/ReactovaNavigator"
 export {default as configureStore} from "./library/redux/configureStore"

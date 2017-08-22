@@ -2,7 +2,7 @@ import React from 'react'
 import { ImageBackground, Dimensions } from 'react-native'
 
 
-export default function getScreenTemplate(routeConfig) {
+export default function getRouteTemplate(routeConfig) {
 	let sceneProps = routeConfig.props
 	const Template = routeConfig.template
 

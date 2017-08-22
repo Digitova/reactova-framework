@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TabNavigator, DrawerNavigator,StackNavigator } from 'react-navigation'
 import deepmerge from 'deepmerge'
 
-import DrawerNavigatorContent from './DrawerNavigator/DrawerNavigatorContent'
+import DrawerNavigatorContent from '../DrawerNavigatorContent'
 import DefaultTheme from '../../../config/theme'
 
 

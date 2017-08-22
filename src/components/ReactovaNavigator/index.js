@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import buildRouteConfig from './RouteConfigurator'
-import createNavigator from './NavigatorFactory'
+import buildRouteConfig from './buildRouteConfig'
+import createNavigator from './createNavigator'
 
 class ReactovaNavigator extends Component {
 	render() {

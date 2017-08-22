@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getScreenTemplate from '../ScreenTemplateWrapper';
+import getScreenTemplate from './getRouteTemplate';
 import ReactovaNavigator from './index'
 
 export default function buildRouteConfig(navigationSchema) {
