@@ -1,1 +1,1 @@
-export const LOGIN_ATTEMPT = 'LOGIN_ATTEMPT';
+export const SET_THEME = 'SET_THEME';
