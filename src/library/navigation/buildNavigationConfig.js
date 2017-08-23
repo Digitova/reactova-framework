@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { TabNavigator, DrawerNavigator,StackNavigator } from 'react-navigation'
-import deepmerge from 'deepmerge'
-
-import DrawerNavigatorContent from '../DrawerNavigatorContent'
-import StackModalNavigator from './StackModalNavigator'
+import deepmerge from "deepmerge"
 import DefaultTheme from '../../../config/theme'
 
 
-export default function createNavigator(navigationSchema,routeConfig, theme = DefaultTheme) {
+export default buildNavigationConfig = function(navigationSchema, theme = DefaultTheme) {
 	const navigatorConfig = {
+		navigatorType: navigationSchema.type,
 		initialRouteName: navigationSchema.defaultRoute,
 		headerMode: 'screen',
 		navigationOptions: {
@@ -50,19 +47,20 @@ export default function createNavigator(navigationSchema,routeConfig, theme = De
 	}
 
 	const stackNavigatorConfig = {
-		mode: navigationSchema.mode
+
 	}
 
 	switch(navigationSchema.type){
 		case "tab":
-			return TabNavigator(routeConfig, deepmerge(tabNavigatorConfig,navigatorConfig))
+			return deepmerge(tabNavigatorConfig,navigatorConfig)
 			break;
 		case "drawer":
-			return DrawerNavigator(routeConfig, deepmerge(drawerNavigatorConfig,navigatorConfig))
+			return deepmerge(drawerNavigatorConfig,navigatorConfig)
 			break;
 		case "stack":
 		default:
-			return StackModalNavigator(routeConfig, deepmerge(stackNavigatorConfig, navigatorConfig))
+			return deepmerge(stackNavigatorConfig, navigatorConfig)
 			break;
 	}
+
 }

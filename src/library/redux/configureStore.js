@@ -6,9 +6,9 @@ import ReactovaReducers from '../../reducers/_reducers'
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
-export default function configureStore(initialState, reducers) {
+export default function configureStore(initialState, appReducers, navigationReducers) {
 
-	const combinedReducers = combineReducers({reactova: ReactovaReducers, app: reducers})
+	const combinedReducers = combineReducers({reactova: ReactovaReducers, app: appReducers, nav: navigationReducers})
 
 	const enhancer = compose(
 		applyMiddleware(
