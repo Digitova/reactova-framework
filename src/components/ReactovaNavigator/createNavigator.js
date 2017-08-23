@@ -3,6 +3,7 @@ import { TabNavigator, DrawerNavigator,StackNavigator } from 'react-navigation'
 import deepmerge from 'deepmerge'
 
 import DrawerNavigatorContent from '../DrawerNavigatorContent'
+import StackModalNavigator from './StackModalNavigator'
 import DefaultTheme from '../../../config/theme'
 
 
@@ -49,7 +50,7 @@ export default function createNavigator(navigationSchema,routeConfig, theme = De
 	}
 
 	const stackNavigatorConfig = {
-
+		mode: navigationSchema.mode
 	}
 
 	switch(navigationSchema.type){
@@ -61,7 +62,7 @@ export default function createNavigator(navigationSchema,routeConfig, theme = De
 			break;
 		case "stack":
 		default:
-			return StackNavigator(routeConfig, deepmerge(stackNavigatorConfig, navigatorConfig))
+			return StackModalNavigator(routeConfig, deepmerge(stackNavigatorConfig, navigatorConfig))
 			break;
 	}
 }
