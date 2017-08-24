@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import getRouteTemplate from './getRouteTemplate';
-import ReactovaNavigator from '../../components/ReactovaNavigator/index'
+import ReactovaNavigator from '../../components/Navigation/ReactovaNavigator'
 import buildNavigationConfig from './buildNavigationConfig'
 
 export default buildRouteConfig = function(navigationSchema) {
