@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import deepmerge from "deepmerge"
 import DefaultTheme from '../../../config/theme'
+import DrawerNavigatorContent from '../../components/Navigation/DrawerNavigatorContent'
 
 
 export default buildNavigationConfig = function(navigationSchema, theme = DefaultTheme) {
