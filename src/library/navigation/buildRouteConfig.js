@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import getRouteTemplate from './getRouteTemplate';
 import ReactovaNavigator from '../../components/Navigation/ReactovaNavigator'
 import buildNavigationConfig from './buildNavigationConfig'
+import DefaultTheme from '../../../config/theme'
 
-export default buildRouteConfig = function(navigationSchema) {
+export default buildRouteConfig = function(navigationSchema, theme = DefaultTheme) {
 	let routes = navigationSchema.routes
 
 	const routeObjects = Object.keys(routes).map((key) => {
 		if(routeIsNavigator(routes[key])) {
-			const routeConfig = buildRouteConfig(routes[key]);
-			const navigationConfig = buildNavigationConfig(routes[key])
+			const routeConfig = buildRouteConfig(routes[key],theme);
+			const navigationConfig = buildNavigationConfig(routes[key],theme)
 
 			let route = {}
 			route[key] = {}
