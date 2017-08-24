@@ -1,7 +1,7 @@
 import React from 'react'
 import {StackNavigator} from 'react-navigation'
 
-export default StackModalNavigator = (routeConfigs, navigatorConfig) => {
+export default StackModalNavigator = (key,routeConfigs, navigatorConfig) => {
 	const CardStackNavigator = StackNavigator(routeConfigs, navigatorConfig);
 	const modalRouteConfig = {};
 	const routeNames = Object.keys(routeConfigs);
@@ -11,7 +11,7 @@ export default StackModalNavigator = (routeConfigs, navigatorConfig) => {
 	}
 
 	return StackNavigator({
-		CardStackNavigator: { screen: CardStackNavigator },
+		[key]: { screen: CardStackNavigator },
 		...modalRouteConfig
 	}, {
 		mode: 'modal',
