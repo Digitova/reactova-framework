@@ -7,6 +7,8 @@ export default function getRouteTemplate(routeConfig) {
 	const Template = routeConfig.template
 
 	return class extends React.Component {
+		static navigationOptions = (Template.hasOwnProperty('navigationOptions')) ? Template.navigationOptions : null
+
 		render() {
 			if (routeConfig.hasOwnProperty('backgroundImage')) {
 				return this.renderImageBackgroundTemplate();

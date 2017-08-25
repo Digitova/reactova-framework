@@ -6,7 +6,6 @@ import DefaultTheme from '../../../config/theme'
 
 export default buildRouteConfig = function(navigationSchema, theme = DefaultTheme) {
 	let routes = navigationSchema.routes
-
 	const routeObjects = Object.keys(routes).map((key) => {
 		if(routeIsNavigator(routes[key])) {
 			const routeConfig = buildRouteConfig(routes[key],theme);
@@ -15,7 +14,6 @@ export default buildRouteConfig = function(navigationSchema, theme = DefaultThem
 			let route = {}
 			route[key] = {}
 			route[key].screen = ReactovaNavigator(key,routeConfig,navigationConfig)
-
 			if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions = routes[key].navigationOptions;
 			} else {
@@ -30,8 +28,10 @@ export default buildRouteConfig = function(navigationSchema, theme = DefaultThem
 			route[key].path = routes[key].path
 			route[key].screen = getRouteTemplate(routes[key])
 
-			if(routes[key].hasOwnProperty('navigationOptions')){
-				route[key].navigationOptions =routes[key].navigationOptions;
+			if(route[key].screen.navigationOptions !== null) {
+				route[key].navigationOptions = route[key].screen.navigationOptions;
+			} else if(routes[key].hasOwnProperty('navigationOptions')){
+				route[key].navigationOptions = routes[key].navigationOptions;
 			} else {
 				route[key].navigationOptions = {
 					title: routes[key].name
