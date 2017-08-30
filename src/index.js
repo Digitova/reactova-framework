@@ -22,3 +22,5 @@ export {default as configureStore} from "./library/redux/configureStore"
 export {default as createReducer} from "./library/redux/createReducer"
 export { ReactovaActions } from "./actions/_actions"
 
+// Screens
+export {default as LoadingScreen} from './screens/LoadingScreen'
