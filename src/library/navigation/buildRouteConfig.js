@@ -16,6 +16,7 @@ export default buildRouteConfig = function(navigationSchema, theme = DefaultThem
 			route[key].screen = ReactovaNavigator(key,routeConfig,navigationConfig)
 			if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions = routes[key].navigationOptions;
+				route[key].navigationOptions.title = routes[key].name
 			} else {
 				route[key].navigationOptions = {
 					title: routes[key].name
@@ -30,8 +31,10 @@ export default buildRouteConfig = function(navigationSchema, theme = DefaultThem
 
 			if(route[key].screen.navigationOptions !== null) {
 				route[key].navigationOptions = route[key].screen.navigationOptions;
+				route[key].navigationOptions.title = routes[key].name
 			} else if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions = routes[key].navigationOptions;
+				route[key].navigationOptions.title = routes[key].name
 			} else {
 				route[key].navigationOptions = {
 					title: routes[key].name
