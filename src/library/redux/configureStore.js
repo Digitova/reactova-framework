@@ -4,9 +4,10 @@ import {AsyncStorage} from 'react-native'
 import { default as thunk } from 'redux-thunk';
 import { NavigationActions } from 'react-navigation'
 import { createStore, applyMiddleware, compose } from 'redux';
-
 import {persistStore, autoRehydrate, purgeStoredState} from 'redux-persist'
 import ReactovaReducers from '../../reducers/_reducers'
+import * as capitalizeFirstLetter from '../strings/capitalizeFirstLetter'  // do not remove.
+
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
