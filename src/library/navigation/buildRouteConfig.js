@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import getRouteTemplate from './getRouteTemplate';
-import ReactovaNavigator from '../../components/Navigation/ReactovaNavigator'
+import MultiNavigator from '../../components/Navigation/MultiNavigator'
 import buildNavigationConfig from './buildNavigationConfig'
 import DefaultTheme from '../../../config/theme'
 
@@ -13,7 +13,7 @@ export default buildRouteConfig = function(navigationSchema, theme = DefaultThem
 
 			let route = {}
 			route[key] = {}
-			route[key].screen = ReactovaNavigator(key,routeConfig,navigationConfig)
+			route[key].screen = MultiNavigator(key,routeConfig,navigationConfig)
 			if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions = routes[key].navigationOptions;
 				route[key].navigationOptions.title = routes[key].name

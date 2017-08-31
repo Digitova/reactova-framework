@@ -1,22 +1,34 @@
-import React from 'react'
-import { StackModalNavigator }  from "reactova-framework"
-import { TabNavigator, DrawerNavigator } from 'react-navigation'
+import React from 'react';
+import { View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import MultiNavigator from './MultiNavigator'
+import buildRouteConfig from '../../library/navigation/buildRouteConfig'
+import buildNavigationConfig from '../../library/navigation/buildNavigationConfig'
 
-export default ReactovaNavigator = (key,routeConfig, navigationConfig) => {
 
-	let Navigator = null
 
-	switch(navigationConfig.navigatorType) {
-		case "tab":
-			Navigator = TabNavigator(routeConfig, navigationConfig)
-			break;
-		case "drawer":
-			Navigator = DrawerNavigator(routeConfig, navigationConfig)
-			break;
-		case "stack":
-		default:
-			Navigator = StackModalNavigator(key,routeConfig, navigationConfig)
+const ReactovaNavigator = (navigationSchema,LoadingScreen,theme) => {
+
+	const bootRouteConfig = buildRouteConfig(navigationSchema,theme);
+	const bootNavigationConfig = buildNavigationConfig(navigationSchema,theme)
+
+	const routerRouteConfig = {
+		Loading: {
+			screen: LoadingScreen,
+		},
+		BaseNavigator: {
+			path: 'init',
+			screen: MultiNavigator("BaseNavigator",bootRouteConfig,bootNavigationConfig),
+		},
+	}
+	const routerNavigationConfig = {
+		initialRouteName: 'Loading',
+		navigationOptions:{
+			tabBarVisible: false
+		}
 	}
 
-	return Navigator
-}
+	return TabNavigator(routerRouteConfig,routerNavigationConfig);
+};
+
+export default ReactovaNavigator;
