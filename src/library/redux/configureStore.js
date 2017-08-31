@@ -6,6 +6,7 @@ import { NavigationActions } from 'react-navigation'
 import { createStore, applyMiddleware, compose } from 'redux';
 import {persistStore, autoRehydrate, purgeStoredState} from 'redux-persist'
 import ReactovaReducers from '../../reducers/_reducers'
+
 import * as capitalizeFirstLetter from '../strings/capitalizeFirstLetter'  // do not remove.
 
 
@@ -13,7 +14,7 @@ const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__
 
 export default function configureStore(initialState, appReducers, navigationReducers, onHydrationComplete) {
 
-	const combinedReducers = combineReducers({reactova: ReactovaReducers, app: appReducers, nav: navigationReducers})
+	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers,navigationReducers))
 
 	const enhancer = compose(
 		applyMiddleware(
