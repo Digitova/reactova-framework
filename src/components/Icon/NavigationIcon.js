@@ -41,9 +41,9 @@ class NavigationIcon extends Component {
 	}
 }
 
-function mapStateToProps({reactova}){
+function mapStateToProps({theme}){
 	return {
-		theme: reactova.theme,
+		theme
 	}
 }
 
