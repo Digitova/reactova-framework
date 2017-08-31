@@ -12,9 +12,9 @@ import * as capitalizeFirstLetter from '../strings/capitalizeFirstLetter'  // do
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
-export default function configureStore(initialState, appReducers, navigationReducers, onHydrationComplete) {
+export default function configureStore(initialState, appReducers, onHydrationComplete) {
 
-	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers,navigationReducers))
+	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers))
 
 	const enhancer = compose(
 		applyMiddleware(
