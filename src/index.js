@@ -1,6 +1,7 @@
 
 // Views
 export {default as GridView} from "./components/GridView"
+export {default as SubTabView} from "./components/SubTabView"
 
 // Buttons
 export {default as CloseIconButton} from './components/Buttons/CloseIconButton'
