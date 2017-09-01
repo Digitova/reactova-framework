@@ -4,6 +4,7 @@ import {AsyncStorage} from 'react-native'
 import { default as thunk } from 'redux-thunk';
 import { NavigationActions } from 'react-navigation'
 import { createStore, applyMiddleware, compose } from 'redux';
+import { composeWithDevTools } from 'remote-redux-devtools';
 import {persistStore, autoRehydrate, purgeStoredState} from 'redux-persist'
 import ReactovaReducers from '../../reducers/_reducers'
 
@@ -16,7 +17,7 @@ export default function configureStore(initialState, appReducers, onHydrationCom
 
 	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers))
 
-	const enhancer = compose(
+	const enhancer = composeWithDevTools(
 		applyMiddleware(
 			thunk,
 			loggerMiddleware,

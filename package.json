@@ -24,7 +24,8 @@
     "redux-persist": "^4.9.1"
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "remote-redux-devtools": "^0.5.12"
   },
   "license": "MIT"
 }
