@@ -17,6 +17,8 @@ export {default as StackModalNavigator} from './components/Navigation/StackModal
 export {default as buildRouteConfig} from './library/navigation/buildRouteConfig'
 export {default as buildNavigationConfig} from './library/navigation/buildNavigationConfig'
 
+// JWT
+export {default as decodeJwt } from './library/jwt/decodeJwt'
 
 // Redux
 export {default as configureStore} from "./library/redux/configureStore"
