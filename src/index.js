@@ -25,3 +25,7 @@ export { ReactovaActions } from "./actions/_actions"
 
 // Screens
 export {default as LoadingScreen} from './screens/LoadingScreen'
+
+
+// Api
+export {default as makeApiRequest} from './library/api/makeApiRequest'
