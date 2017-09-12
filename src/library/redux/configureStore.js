@@ -10,19 +10,16 @@ import ReactovaReducers from '../../reducers/_reducers'
 
 import * as capitalizeFirstLetter from '../strings/capitalizeFirstLetter'  // do not remove.
 
-
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
-export default function configureStore(initialState, appReducers, onHydrationComplete) {
-
+export default function configureStore(initialState, appReducers, devToolOptions, onHydrationComplete) {
 	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers))
-
-	const enhancer = composeWithDevTools(
+	const composeEnhancers = composeWithDevTools({name: devToolOptions.instanceName})
+	const enhancer = composeEnhancers(
 		applyMiddleware(
 			thunk,
 			loggerMiddleware,
 		),
-
 		autoRehydrate()
 	);
 	const store = createStore(combinedReducers, enhancer);
@@ -39,4 +36,3 @@ export default function configureStore(initialState, appReducers, onHydrationCom
 	// })
 	return store;
 }
-
