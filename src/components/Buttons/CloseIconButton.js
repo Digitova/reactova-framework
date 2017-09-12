@@ -15,6 +15,6 @@ export default class extends Component {
 	}
 
 	onPress(){
-		this.props.navigation.goBack(null);
+		this.props.navigation.goBack();
 	}
 }

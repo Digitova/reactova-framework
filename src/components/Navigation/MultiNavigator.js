@@ -1,6 +1,6 @@
 import React from 'react'
 import { StackModalNavigator }  from "reactova-framework"
-import { TabNavigator, DrawerNavigator } from 'react-navigation'
+import { TabNavigator, DrawerNavigator,StackNavigator} from 'react-navigation'
 
 export default MultiNavigator = (key,routeConfig, navigationConfig) => {
 
@@ -15,7 +15,7 @@ export default MultiNavigator = (key,routeConfig, navigationConfig) => {
 			break;
 		case "stack":
 		default:
-			Navigator = StackModalNavigator(key,routeConfig, navigationConfig)
+			Navigator = StackNavigator(routeConfig, navigationConfig)
 	}
 
 	return Navigator

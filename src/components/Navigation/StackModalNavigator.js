@@ -10,11 +10,14 @@ export default StackModalNavigator = (key,routeConfigs, navigatorConfig) => {
 		modalRouteConfig[`${routeNames[i]}Modal`] = routeConfigs[routeNames[i]];
 	}
 
-	return StackNavigator({
-		[key]: { screen: CardStackNavigator },
-		...modalRouteConfig
-	}, {
-		mode: 'modal',
-		headerMode: 'none'
-	});
+	return StackNavigator(
+		{
+			[key]: { screen: CardStackNavigator },
+			...modalRouteConfig
+		},
+		{
+			mode: 'modal',
+			headerMode: 'none'
+		}
+	);
 };

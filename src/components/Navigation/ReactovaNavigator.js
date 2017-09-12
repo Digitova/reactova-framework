@@ -1,24 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
-import MultiNavigator from './MultiNavigator'
-import buildRouteConfig from '../../library/navigation/buildRouteConfig'
-import buildNavigationConfig from '../../library/navigation/buildNavigationConfig'
-
+import BaseNavigator from './BaseNavigator'
 
 
 const ReactovaNavigator = (navigationSchema,LoadingScreen,theme) => {
-
-	const bootRouteConfig = buildRouteConfig(navigationSchema,theme);
-	const bootNavigationConfig = buildNavigationConfig(navigationSchema,theme)
-
 	const routerRouteConfig = {
 		Loading: {
 			screen: LoadingScreen,
 		},
 		BaseNavigator: {
-			path: 'init',
-			screen: MultiNavigator("BaseNavigator",bootRouteConfig,bootNavigationConfig),
+			path: 'base',
+			screen: BaseNavigator(navigationSchema,theme),
 		},
 	}
 	const routerNavigationConfig = {
@@ -32,3 +24,7 @@ const ReactovaNavigator = (navigationSchema,LoadingScreen,theme) => {
 };
 
 export default ReactovaNavigator;
+
+
+
+
