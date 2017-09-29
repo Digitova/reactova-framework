@@ -46,7 +46,7 @@ const Styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	message: {
-		fontSize: 15,
+		fontSize: 13,
 		flex: 1
 	},
 	alert: {
@@ -99,8 +99,8 @@ const Styles = StyleSheet.create({
 		color: '#1C1E21'
 	},
 	icon: {
-		fontSize: 25,
-		marginRight: 10,
+		fontSize: 18,
+		marginRight: 8,
 		alignSelf: 'flex-start'
 	}
 })
