@@ -25,6 +25,34 @@ Types:
 primary|success|danger|warning|info|light|dark 
 ```
 
+## Library Functions
+
+### Redux
+#### getActionPropertyAsArray
+This function is a useful redux helper function for getting an action property as an array.
+If the property was already an array it get's returned.  If the property was not an array it gets wrapped in one.
+
+
+
+Example:
+```
+const action = {
+    feedback: {
+        id: 3,
+        message: "test"
+    }
+}
+
+const feedbackArray = getActionPropertyAsArray(action,'feedback');
+```
+Would return
+```
+console.log(feedbackArray)
+> [{id: 3, message: "test"}]
+
+```
+
+
 
 ## License
 
