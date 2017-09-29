@@ -50,6 +50,16 @@ console.log(feedbackArray)
 ```
 
 
+### Redux
+#### NormalizedCollection
+This function wraps normalized redux data in object that provides handy accessor functions.
+
+Usage:
+```
+let Questions = new NormalizedCollection(questions,result)
+const items = Questions.getItems()
+const item3 = Questions.find(3)
+```
 
 ## License
 

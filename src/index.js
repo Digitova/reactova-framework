@@ -22,6 +22,7 @@ export {default as buildNavigationConfig} from './library/navigation/buildNaviga
 // Redux
 export {default as configureStore} from "./library/redux/configureStore"
 export {default as createReducer} from "./library/redux/createReducer"
+export {default as NormalizedCollection } from './library/redux/NormalizedCollection'
 export { ReactovaActions } from "./actions/_actions"
 
 export {default as arrayify} from './library/utils/arrayify'
