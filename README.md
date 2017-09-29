@@ -2,7 +2,7 @@
 
 ## Components
 
-##### AlertBanner
+### AlertBanner
 The AlertBanner object is a presentational component that renders a tappable alert banner. 
 It uses [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons/) for the icon and exposes an
 onPress function for when the user taps on it.
