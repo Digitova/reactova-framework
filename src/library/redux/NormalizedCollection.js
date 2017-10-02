@@ -15,4 +15,6 @@ export default function NormalizedCollection(entities, result) {
 	this.find = function(id) {
 		return this.entities[id]
 	}
+
+	this.keyExtractor = (item, key) => key
 }
