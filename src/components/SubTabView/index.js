@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableHighlight} from 'react-native'
+import React, {Component} from 'react'
+import {StyleSheet, View, Text, TouchableHighlight} from 'react-native'
 import TabButton from './TabButton'
 
 
@@ -20,32 +20,32 @@ export default class extends Component {
 			<View style={{flex: 1}}>
 				<View style={Styles.QuestionTypes}>
 					{
-						tabs.map(({title},key)=>{
+						tabs.map(({title}, key) => {
 							return <TabButton
-										key={key}
-										index={key}
-										text={title}
-										activeTab={this.state.activeTab}
-										changeTab={this.changeTab.bind(this)}
-									/>
+								key={key}
+								index={key}
+								text={title}
+								activeTab={this.state.activeTab}
+								changeTab={this.changeTab.bind(this)}
+							/>
 						})
 					}
 				</View>
-				{ this.renderTab() }
+				{this.renderTab()}
 			</View>
 		)
 	}
 
-	renderTab(){
+	renderTab() {
 		const {
 			tabs
 		} = this.props
 
 		return (
-			tabs.map((tab,key)=>{
-				if(key == this.state.activeTab) {
+			tabs.map((tab, key) => {
+				if (key == this.state.activeTab) {
 					const ContentView = tab.content
-					return <ContentView key={key} />
+					return <ContentView key={key}/>
 				}
 			})
 		)
