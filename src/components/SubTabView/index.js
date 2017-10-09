@@ -16,7 +16,7 @@ export default class extends Component {
 								index={key}
 								text={title}
 								activeTab={this.state.activeTab}
-								changeTab={this.changeTab.bind(this)}
+								changeTab={this.changeTab}
 							/>
 						))
 					}
