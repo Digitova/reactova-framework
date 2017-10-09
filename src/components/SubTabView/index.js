@@ -7,19 +7,21 @@ export default class extends Component {
 
 	render = () => (
 		<View style={{flex: 1}}>
-			<View style={Styles.tabWrapper}>
-				{
-					this.props.tabs.map(({title}, key) => (
-						<TabButton
-							key={key}
-							index={key}
-							text={title}
-							activeTab={this.state.activeTab}
-							changeTab={this.changeTab.bind(this)}
-						/>
-					))
-				}
-			</View>
+			{this.props.tabs.length < 2 ? null :
+				<View style={Styles.tabWrapper}>
+					{
+						this.props.tabs.map(({title}, key) => (
+							<TabButton
+								key={key}
+								index={key}
+								text={title}
+								activeTab={this.state.activeTab}
+								changeTab={this.changeTab.bind(this)}
+							/>
+						))
+					}
+				</View>
+			}
 			{this.renderTab()}
 		</View>
 	)
