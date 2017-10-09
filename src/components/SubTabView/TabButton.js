@@ -49,17 +49,15 @@ class TabButton extends Component {
 	getTabStyles(){
 		if(this.isActiveTab()){
 			return this.styles.ActiveTab
-		} else {
-			return {}
 		}
+		return {}
 	}
 
 	getTabTextStyles(){
-		if(this.isActiveTab()){
+		if(this.isActiveTab()) {
 			return this.styles.ActiveText
-		} else {
-			return {}
 		}
+		return {}
 	}
 
 	isActiveTab(){
