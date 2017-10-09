@@ -8,7 +8,7 @@ export default class extends Component {
 
 	render = () => (
 		<View style={{flex: 1}}>
-			<View style={Styles.QuestionTypes}>
+			<View style={Styles.tabWrapper}>
 				{
 					this.props.tabs.map(({title}, key) => {
 						return <TabButton
@@ -38,7 +38,7 @@ export default class extends Component {
 }
 
 const Styles = StyleSheet.create({
-	QuestionTypes: {
+	tabWrapper: {
 		flexDirection: 'row',
 		alignSelf: 'stretch',
 		alignContent: 'stretch',
