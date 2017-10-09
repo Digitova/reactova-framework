@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import {StyleSheet, View, Text, TouchableHighlight} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import TabButton from './TabButton'
-
 
 export default class extends Component {
 	state = {activeTab: 0}
