@@ -20,9 +20,9 @@ export default getModalRoutes = function(navigationSchema, theme = DefaultTheme)
 
 
 			if(route[key+"Modal"].screen.navigationOptions !== null) {
-				const {headerStyle} = route[key+"Modal"].screen.navigationOptions
+				const {headerStyle, ...navigationOptions} = route[key+"Modal"].screen.navigationOptions
 				route[key+"Modal"].navigationOptions = {
-					...route[key+"Modal"].screen.navigationOptions,
+					...navigationOptions,
 					headerStyle: {
 						...headerStyle,
 						paddingTop: 0,
