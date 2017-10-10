@@ -10,7 +10,7 @@ export default class extends Component {
 			{this.props.tabs.length < 2 ? null :
 				<View style={Styles.tabWrapper}>
 					{
-						this.props.tabs.map(({title}, key) => (
+						this.props.tabs.sort(this.compareSortOrder).map(({title}, key) => (
 							<TabButton
 								key={key}
 								index={key}
@@ -36,6 +36,8 @@ export default class extends Component {
 	)
 
 	changeTab = (key) => this.setState({activeTab: key})
+
+	compareSortOrder = (element1, element2) => element1.sortOrder - element2.sortOrder
 }
 
 const Styles = StyleSheet.create({
