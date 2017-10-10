@@ -26,7 +26,7 @@ export default getModalRoutes = function(navigationSchema, theme = DefaultTheme)
 					headerStyle: {
 						...headerStyle,
 						paddingTop: 0,
-						height: 44
+						height: 50
 					}
 				}
 				route[key+"Modal"].navigationOptions.title = routes[key].name
