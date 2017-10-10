@@ -18,8 +18,17 @@ export default getModalRoutes = function(navigationSchema, theme = DefaultTheme)
 			route[key+"Modal"].path = routes[key].path+'_modal'
 			route[key+"Modal"].screen = getRouteTemplate(routes[key])
 
+
 			if(route[key+"Modal"].screen.navigationOptions !== null) {
-				route[key+"Modal"].navigationOptions = route[key+"Modal"].screen.navigationOptions;
+				const {headerStyle} = route[key+"Modal"].screen.navigationOptions
+				route[key+"Modal"].navigationOptions = {
+					...route[key+"Modal"].screen.navigationOptions,
+					headerStyle: {
+						...headerStyle,
+						paddingTop: 0,
+						height: 44
+					}
+				}
 				route[key+"Modal"].navigationOptions.title = routes[key].name
 			} else if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key+"Modal"].navigationOptions = routes[key].navigationOptions;
