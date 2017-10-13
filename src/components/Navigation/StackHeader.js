@@ -10,7 +10,7 @@ class StackHeader extends Component
 		return <Header
 			{...this.props}
 			style={{
-				backgroundColor: theme.primaryColor,
+				backgroundColor: theme.navigation,
 				paddingTop: 0,
 				height: 50
 			}}
@@ -18,12 +18,12 @@ class StackHeader extends Component
 			getScreenDetails={(scene) => {
 				return deepmerge(this.props.getScreenDetails(scene),{
 					options: {
-						headerTintColor: theme.secondaryColor,
+						headerTintColor: theme.navigationAccent,
 						headerTitleStyle: {
-							color: theme.secondaryColor
+							color: theme.navigationText
 						},
 						headerBackTitleStyle: {
-							color: theme.secondaryColor
+							color: theme.navigationAccent
 						},
 					}
 				})

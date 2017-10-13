@@ -10,10 +10,10 @@ class TabBar extends Component
 		const { theme } = this.props
 		return <DefaultTabBar
 			{...this.props}
-			activeTintColor={theme.tabBarIconActiveColor}
-			inactiveTintColor={theme.tabBarIconInActiveColor}
+			activeTintColor={theme.navigationAccent}
+			inactiveTintColor={theme.navigationText}
 			style={{
-				backgroundColor: theme.primaryColor,
+				backgroundColor: theme.navigation,
 			}}
 		/>
 	}

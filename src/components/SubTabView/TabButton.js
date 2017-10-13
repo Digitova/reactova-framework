@@ -10,21 +10,13 @@ class TabButton extends Component {
 			tabButtonTextContainer: {
 				flex: 1,
 			},
-			ActiveTab:{
-				borderBottomWidth: 3,
-				borderColor: this.props.theme.secondaryColor
-			},
-			ActiveText:{
-				color: "#555"
-			},
+
 			tabButtonText: {
 				flex: 1,
 				textAlign: "center",
-				backgroundColor: '#fff',
 				padding: 10,
 				marginLeft: -1,
 				height: 41,
-				color: "#999",
 				fontSize: 14,
 			}
 		})
@@ -47,17 +39,31 @@ class TabButton extends Component {
 	}
 
 	getTabStyles(){
+		const { theme } = this.props
 		if(this.isActiveTab()){
-			return this.styles.ActiveTab
+			return {
+				borderBottomWidth: 3,
+				borderColor: theme.secondaryNavigationAccent,
+				backgroundColor: theme.secondaryNavigation
+			}
 		}
-		return {}
+		return {
+			backgroundColor: theme.secondaryNavigation
+		}
 	}
 
 	getTabTextStyles(){
+		const { theme } = this.props
 		if(this.isActiveTab()) {
-			return this.styles.ActiveText
+			return {
+				color: theme.secondaryNavigationAccent,
+				backgroundColor: theme.secondaryNavigation
+			}
 		}
-		return {}
+		return {
+			color: theme.secondaryNavigationText,
+			backgroundColor: theme.secondaryNavigation
+		}
 	}
 
 	isActiveTab(){
