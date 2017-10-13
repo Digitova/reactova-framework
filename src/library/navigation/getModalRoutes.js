@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import getRouteTemplate from './getRouteTemplate';
-import MultiNavigator from '../../components/Navigation/MultiNavigator'
-import buildNavigationConfig from './buildNavigationConfig'
-import DefaultTheme from '../../../config/theme'
+import StackHeader from '../../components/Navigation/StackHeader'
 
-export default getModalRoutes = function(navigationSchema, theme = DefaultTheme) {
+
+export default getModalRoutes = function(navigationSchema) {
 	let routes = navigationSchema.routes
 
 	const modalRouteList = []
 
 	const routeObjects = Object.keys(routes).map((key) => {
 		if(routeIsNavigator(routes[key])) {
-			return getModalRoutes(routes[key],theme);
+			return getModalRoutes(routes[key]);
 		} else {
 			let route = {}
 			route[key+"Modal"] = {}
@@ -27,7 +26,9 @@ export default getModalRoutes = function(navigationSchema, theme = DefaultTheme)
 						...headerStyle,
 						paddingTop: 0,
 						height: 50
-					}
+					},
+					header: props => <StackHeader {...props}/>,
+
 				}
 				route[key+"Modal"].navigationOptions.title = routes[key].name
 			} else if(routes[key].hasOwnProperty('navigationOptions')){
@@ -37,6 +38,9 @@ export default getModalRoutes = function(navigationSchema, theme = DefaultTheme)
 				route[key+"Modal"].navigationOptions = {
 					title: routes[key].name
 				}
+			}
+			if(!route[key+"Modal"].navigationOptions.hasOwnProperty("header")){
+				route[key+"Modal"].navigationOptions.header = (props) => <StackHeader {...props}/>
 			}
 			return route
 		}

@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import getRouteTemplate from './getRouteTemplate';
 import MultiNavigator from '../../components/Navigation/MultiNavigator'
 import buildNavigationConfig from './buildNavigationConfig'
-import DefaultTheme from '../../../config/theme'
 
-export default buildRouteConfig = function(navigationSchema, theme = DefaultTheme) {
+export default buildRouteConfig = function(navigationSchema) {
 	let routes = navigationSchema.routes
 	const routeObjects = Object.keys(routes).map((key) => {
 		if(routeIsNavigator(routes[key])) {
-			const routeConfig = buildRouteConfig(routes[key],theme);
-			const navigationConfig = buildNavigationConfig(routes[key],theme)
+			const routeConfig = buildRouteConfig(routes[key]);
+			const navigationConfig = buildNavigationConfig(routes[key])
 
 			let route = {}
 			route[key] = {}

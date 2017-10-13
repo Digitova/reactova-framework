@@ -3,14 +3,14 @@ import { TabNavigator } from 'react-navigation';
 import BaseNavigator from './BaseNavigator'
 
 
-const ReactovaNavigator = (navigationSchema,LoadingScreen,theme) => {
+const ReactovaNavigator = (navigationSchema,LoadingScreen) => {
 	const routerRouteConfig = {
 		Loading: {
 			screen: LoadingScreen,
 		},
 		BaseNavigator: {
 			path: 'base',
-			screen: BaseNavigator(navigationSchema,theme),
+			screen: BaseNavigator(navigationSchema),
 		},
 	}
 	const routerNavigationConfig = {

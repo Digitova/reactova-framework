@@ -7,11 +7,11 @@ import buildNavigationConfig from '../../library/navigation/buildNavigationConfi
 import getModalRoutes from '../../library/navigation/getModalRoutes'
 
 
-const BaseNavigator = (navigationSchema,LoadingScreen,theme) => {
+const BaseNavigator = (navigationSchema,LoadingScreen) => {
 
-	const bootRouteConfig = buildRouteConfig(navigationSchema,theme);
-	const bootNavigationConfig = buildNavigationConfig(navigationSchema,theme)
-	const modalRoutes = getModalRoutes(navigationSchema,theme)
+	const bootRouteConfig = buildRouteConfig(navigationSchema);
+	const bootNavigationConfig = buildNavigationConfig(navigationSchema)
+	const modalRoutes = getModalRoutes(navigationSchema)
 
 	const ModalNavigator = StackNavigator(
 		{

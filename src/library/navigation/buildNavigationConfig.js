@@ -1,44 +1,23 @@
 import React, { Component } from 'react';
 import deepmerge from "deepmerge"
-import DefaultTheme from '../../../config/theme'
 import DrawerNavigatorContent from '../../components/Navigation/DrawerNavigatorContent'
 import TabBar from '../../components/Navigation/TabBar'
+import StackHeader from '../../components/Navigation/StackHeader'
 
 
-export default buildNavigationConfig = function(navigationSchema, theme = DefaultTheme) {
+export default buildNavigationConfig = function(navigationSchema) {
 	const navigatorConfig = {
 		navigatorType: navigationSchema.type,
 		initialRouteName: navigationSchema.defaultRoute,
 		headerMode: 'screen',
 		navigationOptions: {
-			headerTintColor: theme.secondaryColor,
-			headerStyle: {
-				backgroundColor: theme.primaryColor,
-				paddingTop: 0,
-				height: 50
-			},
-			headerTitleStyle: {
-				color: theme.secondaryColor
-			},
-			headerBackTitleStyle: {
-				color: theme.secondaryColor
-			},
+			header: props => <StackHeader {...props}/>,
 			title: navigationSchema.name
 		},
 	}
 
 	const tabNavigatorConfig = {
 		tabBarComponent: TabBar,
-		tabBarOptions: {
-			activeTintColor: theme.tabBarIconActiveColor,
-			inactiveTintColor: theme.tabBarIconInActiveColor,
-			labelStyle: {
-				fontSize: 12,
-			},
-			style: {
-				backgroundColor: theme.primaryColor,
-			},
-		},
 		swipeEnabled: true
 	}
 
