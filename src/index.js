@@ -14,7 +14,6 @@ export {default as NavigationIcon} from "./components/Icon/NavigationIcon"
 
 // Navigation
 export {default as ReactovaNavigator} from "./components/Navigation/ReactovaNavigator"
-export {default as StackModalNavigator} from './components/Navigation/StackModalNavigator'
 export {default as buildRouteConfig} from './library/navigation/buildRouteConfig'
 export {default as buildNavigationConfig} from './library/navigation/buildNavigationConfig'
 

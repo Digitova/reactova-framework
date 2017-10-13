@@ -1,8 +1,7 @@
 import React from 'react'
-import { StackModalNavigator }  from "reactova-framework"
 import { TabNavigator, DrawerNavigator,StackNavigator} from 'react-navigation'
 
-export default MultiNavigator = (key,routeConfig, navigationConfig) => {
+export default MultiNavigator = (routeConfig, navigationConfig) => {
 
 	let Navigator = null
 

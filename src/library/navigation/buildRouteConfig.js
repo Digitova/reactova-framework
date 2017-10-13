@@ -12,7 +12,7 @@ export default buildRouteConfig = function(navigationSchema) {
 
 			let route = {}
 			route[key] = {}
-			route[key].screen = MultiNavigator(key,routeConfig,navigationConfig)
+			route[key].screen = MultiNavigator(routeConfig,navigationConfig)
 			if(routes[key].hasOwnProperty('navigationOptions')){
 				route[key].navigationOptions = routes[key].navigationOptions;
 				route[key].navigationOptions.title = routes[key].name

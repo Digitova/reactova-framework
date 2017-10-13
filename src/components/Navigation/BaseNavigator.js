@@ -7,17 +7,19 @@ import buildNavigationConfig from '../../library/navigation/buildNavigationConfi
 import getModalRoutes from '../../library/navigation/getModalRoutes'
 
 
-const BaseNavigator = (navigationSchema,LoadingScreen) => {
+const BaseNavigator = (navigationSchema) => {
 
 	const bootRouteConfig = buildRouteConfig(navigationSchema);
 	const bootNavigationConfig = buildNavigationConfig(navigationSchema)
 	const modalRoutes = getModalRoutes(navigationSchema)
 
+	const RootAppNavigator = MultiNavigator(bootRouteConfig,bootNavigationConfig)
+
 	const ModalNavigator = StackNavigator(
 		{
 			RootAppNavigator: {
 				path: 'init',
-				screen: MultiNavigator("RootAppNavigator",bootRouteConfig,bootNavigationConfig),
+				screen: RootAppNavigator,
 			},
 			...modalRoutes
 		},
