@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import deepmerge from "deepmerge"
 import DefaultTheme from '../../../config/theme'
 import DrawerNavigatorContent from '../../components/Navigation/DrawerNavigatorContent'
+import TabBar from '../../components/Navigation/TabBar'
 
 
 export default buildNavigationConfig = function(navigationSchema, theme = DefaultTheme) {
@@ -27,6 +28,7 @@ export default buildNavigationConfig = function(navigationSchema, theme = Defaul
 	}
 
 	const tabNavigatorConfig = {
+		tabBarComponent: TabBar,
 		tabBarOptions: {
 			activeTintColor: theme.tabBarIconActiveColor,
 			inactiveTintColor: theme.tabBarIconInActiveColor,
