@@ -1,8 +1,8 @@
-import * as types from './_actionTypes';
+export const SET_THEME = 'SET_THEME';
 
 export function setTheme(theme){
 	return {
-		type: types.SET_THEME,
+		type: SET_THEME,
 		theme
 	}
 }
