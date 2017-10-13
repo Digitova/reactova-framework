@@ -6,7 +6,7 @@ export default class extends Component {
 	state = {activeTab: 0}
 
 	render = () => (
-		<View style={{flex: 1}}>
+		<View style={[{flex: 1},this.props.style]}>
 			{this.props.tabs.length < 2 ? null :
 				<View style={Styles.tabWrapper}>
 					{
