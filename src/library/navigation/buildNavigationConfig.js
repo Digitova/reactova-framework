@@ -36,7 +36,8 @@ export default buildNavigationConfig = function(navigationSchema, theme = Defaul
 			style: {
 				backgroundColor: theme.primaryColor,
 			},
-		}
+		},
+		swipeEnabled: true
 	}
 
 	const drawerNavigatorConfig = {
