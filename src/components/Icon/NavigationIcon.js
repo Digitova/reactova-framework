@@ -27,10 +27,10 @@ class NavigationIcon extends Component {
 		return (
 			<TouchableHighlight
 				style={ this.styles.navItem }
-				underlayColor={ this.props.theme.navButtonUnderlayColor }
+				underlayColor={ this.props.theme.navigationLighter }
 				onPress={this.handlePress.bind(this)} >
 				<View>
-					<Icon name={this.props.name} provider={this.props.provider} style={[this.styles.navText, this.props.style , {color: this.props.theme.secondaryColor}] }/>
+					<Icon name={this.props.name} provider={this.props.provider} style={[this.styles.navText, this.props.style , {color: this.props.theme.primaryAccent}] }/>
 				</View>
 			</TouchableHighlight>
 		);
