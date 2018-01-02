@@ -12,7 +12,7 @@ import * as capitalizeFirstLetter from '../strings/capitalizeFirstLetter'  // do
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
-export default function configureStore(initialState, appReducers, devToolOptions, onHydrationComplete) {
+export default function configureStore(initialState, appReducers, devToolOptions, onHydrationComplete, persistanceBlacklist) {
 	const combinedReducers = combineReducers(Object.assign(ReactovaReducers, appReducers))
 	const composeEnhancers = composeWithDevTools({name: devToolOptions.instanceName})
 	const enhancer = composeEnhancers(
@@ -24,7 +24,7 @@ export default function configureStore(initialState, appReducers, devToolOptions
 	);
 	const store = createStore(combinedReducers, enhancer);
 
-	persistStore(store, {storage: AsyncStorage, blacklist: ['nav']},() => {
+	persistStore(store, {storage: AsyncStorage, blacklist: ['nav', ...persistanceBlacklist]},() => {
 		onHydrationComplete(store)
 		console.log("hydration complete");
 	});
