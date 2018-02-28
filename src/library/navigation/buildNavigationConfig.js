@@ -18,7 +18,8 @@ export default buildNavigationConfig = function(navigationSchema) {
 
 	const tabNavigatorConfig = {
 		tabBarComponent: TabBar,
-		swipeEnabled: true
+		swipeEnabled:false,
+		animationEnabled:false
 	}
 
 	const drawerNavigatorConfig = {
