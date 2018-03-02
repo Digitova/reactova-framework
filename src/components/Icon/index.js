@@ -10,7 +10,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import Zocial from 'react-native-vector-icons/Zocial'
 
-export default class extends Component {
+export default class Icon extends Component {
 
 	constructor(props) {
 		super(props);
@@ -41,5 +41,17 @@ export default class extends Component {
 				return <Zocial name={name} {...remainingProps} />
 		}
 	}
+}
 
+export {
+	Icon,
+	Entypo,
+	EvilIcons,
+	FontAwesome,
+	Foundation,
+	Ionicons,
+	MaterialCommunityIcons,
+	SimpleLineIcons,
+	Octicons,
+	Zocial,
 }

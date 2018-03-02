@@ -8,7 +8,7 @@ export {default as CloseIconButton} from './components/Buttons/CloseIconButton'
 export {default as AlertBanner} from './components/AlertBanner'
 
 // Icons
-export {default as Icon} from "./components/Icon"
+export * from './components/Icon'
 export {default as TabNavigatorIcon} from "./components/Icon/TabNavigatorIcon"
 export {default as NavigationIcon} from "./components/Icon/NavigationIcon"
 
