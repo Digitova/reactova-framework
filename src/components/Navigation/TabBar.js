@@ -8,10 +8,11 @@ class TabBar extends Component
 {
 	render() {
 		const { theme } = this.props
+		const tintColor = theme.navigationTextTabBar ? theme.navigationTextTabBar : theme.navigationText
 		return <DefaultTabBar
 			{...this.props}
 			activeTintColor={theme.navigationAccent}
-			inactiveTintColor={theme.navigationText}
+			inactiveTintColor={tintColor}
 			style={{
 				backgroundColor: theme.navigation,
 			}}

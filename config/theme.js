@@ -22,6 +22,7 @@ export default {
 	navigation:'#f0f0f0',
 	navigationLighter:'#f5f5f5',
 	navigationText:'#333333',
+	navigationTextTabBar:'#333333',
 	navigationAccent:'#0bb0ff',
 
 	secondaryNavigationDarker:'#d0d0d0',
