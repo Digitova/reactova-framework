@@ -27,6 +27,6 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "redux-persist": "^4.9.1"
-  }
+  },
   "license": "MIT"
 }
