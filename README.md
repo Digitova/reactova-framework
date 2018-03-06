@@ -61,6 +61,18 @@ const items = Questions.getItems()
 const item3 = Questions.find(3)
 ```
 
+#### Redux Development Tools
+Reactova utilizes React Native Debugger, an all inclusive Electron app that includes a console, inspector, and the handy Redux DevTools.
+
+React Native Debugger makes use of an environment variable:
+```
+REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' ||" react-native start
+```
+Set this in your shell profile (`.pofile`, `.zshrc`, etc.).
+
+Further information on how React Native debugger can be found on their (getting started page)[https://github.com/jhen0409/react-native-debugger/blob/master/docs/getting-started.md]
+
+
 ## License
 
 
