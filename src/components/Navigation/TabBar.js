@@ -15,7 +15,6 @@ class TabBar extends Component
 			inactiveTintColor={tintColor}
 			style={{
 				backgroundColor: theme.navigation,
-				paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight
 			}}
 		/>
 	}
