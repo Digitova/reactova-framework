@@ -26,7 +26,6 @@ export default function configureStore(initialState, appReducers, devToolOptions
 		applyMiddleware(
 			thunk,
 			reactNavigationMiddleware,
-			loggerMiddleware,
 		),
 		autoRehydrate()
 	);
